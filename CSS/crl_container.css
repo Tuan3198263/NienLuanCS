@@ -44,3 +44,56 @@
 .img-slide{
     cursor: pointer;
 }
+
+        .carousel-caption {
+            position: static;
+            bottom: 0px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: calc(100%);
+        }
+    
+        .carousel-caption img {
+            width: 80px;
+            /* Kích thước của ảnh nhỏ */
+            height: 80px;
+            margin-right: 10px;
+            border-radius:5px;
+        }
+    
+        .carousel-caption .explore-button{
+            margin-left: auto;
+            color:white;
+        }
+    .content-cpn{
+        font-weight: bold;
+    }
+
+    .card-img-top {
+            height: 150px;
+            width:150px;
+            /* Điều chỉnh chiều cao của ảnh */
+            object-fit: cover;
+            /* Đảm bảo ảnh vừa khung */
+    }
+    
+    .card-title {
+            font-size: 1rem;
+            font-weight: bold;
+    }
+    
+    .btn-outline-primary {
+            margin-top: 10px;
+        }
+
+    .pointer{
+        cursor: pointer;
+    }
+        
