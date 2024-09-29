@@ -1,9 +1,0 @@
-/* CSS để loại bỏ gạch chân cho các liên kết */
-footer a {
-    text-decoration: none;
-}
-
-/* CSS để tạo màu trắng cho các liên kết trong footer */
-footer a.text-white {
-    color: #ffffff;
-}
