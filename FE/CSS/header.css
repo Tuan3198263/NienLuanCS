@@ -1,0 +1,43 @@
+.font_header{
+    font-weight:500;
+
+}
+
+.logo img{
+    max-height: 40px;
+}
+.logo{
+    margin-right:auto;
+}
+
+.navbar-custom {
+    padding: 0.5rem 1rem;
+    /* Điều chỉnh kích thước padding cho navbar */
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 500px;
+    /* Kích thước tối đa của thanh tìm kiếm */
+}
+
+.btn-category {
+    display: flex;
+    align-items: center;
+}
+
+.btn-category i {
+    margin-right: 8px;
+    /* Khoảng cách giữa biểu tượng và văn bản */
+}
+
+.input-group .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+        
+.input-group .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+

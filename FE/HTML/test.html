@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-5.3.0-alpha3-dist/bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+<!-- Container chính của carousel -->
+<div class="container mt-5">
+    <!-- Tiêu đề và nút "Xem tất cả" -->
+    <div class="row bg-primary text-white py-3 justify-content-between align-items-center mb-4">
+        <div class="col-6">
+            <h2 class="mb-0">Việc làm tốt nhất</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a href="#" class="text-white">Xem tất cả</a>
+        </div>
+    </div>
+
+    <!-- Carousel chính -->
+    <div id="jobCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Nội dung Carousel -->
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job1.png" alt="Job 1" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">Product Manager</h5>
+                                <p class="job-company">Công ty VWX</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job2.png" alt="Job 2" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">Product Designer</h5>
+                                <p class="job-company">Công ty XYZ</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job3.png" alt="Job 3" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">Software Engineer</h5>
+                                <p class="job-company">Công ty ABC</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job4.png" alt="Job 4" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">Marketing Specialist</h5>
+                                <p class="job-company">Công ty DEF</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job5.png" alt="Job 5" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">UX/UI Designer</h5>
+                                <p class="job-company">Công ty GHI</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job6.png" alt="Job 6" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">Project Manager</h5>
+                                <p class="job-company">Công ty JKL</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 (Tương tự với Slide 1 nhưng với nội dung khác) -->
+            <div class="carousel-item">
+                <div class="row">
+                    <!-- Cột 1, Cột 2, Cột 3 với nội dung khác -->
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job7.png" alt="Job 7" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">Graphic Designer</h5>
+                                <p class="job-company">Công ty NMO</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job8.png" alt="Job 8" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">Data Analyst</h5>
+                                <p class="job-company">Công ty PQR</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job9.png" alt="Job 9" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">SEO Specialist</h5>
+                                <p class="job-company">Công ty STU</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls cho carousel -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#jobCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#jobCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!-- Container chính của carousel -->
+<div class="container mt-5">
+    <!-- Tiêu đề và nút "Xem tất cả" -->
+    <div class="row bg-primary text-white py-3 justify-content-between align-items-center mb-4">
+        <div class="col-6">
+            <h2 class="mb-0">Việc làm tốt nhất</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a href="#" class="text-white">Xem tất cả</a>
+        </div>
+    </div>
+
+    <!-- Carousel chính -->
+    <div id="jobCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Chỉ thị các chấm dưới cùng -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#jobCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#jobCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <!-- Thêm nút tương ứng cho số slide -->
+        </div>
+
+        <!-- Nội dung Carousel -->
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job1.png" alt="Job 1" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">Product Manager</h5>
+                                <p class="job-company">Công ty VWX</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job2.png" alt="Job 2" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">Product Designer</h5>
+                                <p class="job-company">Công ty XYZ</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job3.png" alt="Job 3" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">Software Engineer</h5>
+                                <p class="job-company">Công ty ABC</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job4.png" alt="Job 4" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">Marketing Specialist</h5>
+                                <p class="job-company">Công ty DEF</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job5.png" alt="Job 5" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">UX/UI Designer</h5>
+                                <p class="job-company">Công ty GHI</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job6.png" alt="Job 6" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">Project Manager</h5>
+                                <p class="job-company">Công ty JKL</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job7.png" alt="Job 7" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">Graphic Designer</h5>
+                                <p class="job-company">Công ty NMO</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job8.png" alt="Job 8" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">Data Analyst</h5>
+                                <p class="job-company">Công ty PQR</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center job-item bg-light p-3 mb-4">
+                            <div class="job-image me-3">
+                                <img src="../img/jobs/job9.png" alt="Job 9" class="img-fluid">
+                            </div>
+                            <div class="job-content">
+                                <h5 class="job-title">SEO Specialist</h5>
+                                <p class="job-company">Công ty STU</p>
+                                <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls cho carousel -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#jobCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#jobCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+    
+</body>
+<script src="../bootstrap-5.3.0-alpha3-dist/bootstrap-5.3.0-alpha3-dist/js/bootstrap.min.js"></script>
+</html>

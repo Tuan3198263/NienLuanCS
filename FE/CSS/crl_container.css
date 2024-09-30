@@ -1,0 +1,99 @@
+.carousel-container {
+    background-color: #f0f0f0;
+    /* Màu nền xám cho khối chứa carousel */
+    padding: 30px;
+}
+
+.carousel-wrapper {
+    max-width: 1200px;
+    /* Kích thước nhỏ hơn của carousel */
+    margin: 0 auto;
+    /* Căn giữa carousel trong container */
+    border-radius: 10px;
+    /* Bo góc nếu cần */
+    overflow: hidden;
+    /* Để không hiển thị phần thừa */
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* Đảm bảo hình ảnh không bị kéo dãn */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Màu nền cho nút điều khiển */
+    border-radius: 50%;
+    /* Bo tròn các nút điều khiển */
+    width:20px;
+    height:20px;
+}
+
+.carousel-indicators button {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Màu nền cho các chỉ báo */
+}
+
+.carousel-indicators .active {
+    background-color: #fff;
+    /* Màu nền cho chỉ báo đang hoạt động */
+}
+.img-slide{
+    cursor: pointer;
+}
+
+        .carousel-caption {
+            position: static;
+            bottom: 0px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: calc(100%);
+        }
+    
+        .carousel-caption img {
+            width: 80px;
+            /* Kích thước của ảnh nhỏ */
+            height: 80px;
+            margin-right: 10px;
+            border-radius:5px;
+        }
+    
+        .carousel-caption .explore-button{
+            margin-left: auto;
+            color:white;
+        }
+    .content-cpn{
+        font-weight: bold;
+    }
+
+    .card-img-top {
+            height: 150px;
+            width:150px;
+            /* Điều chỉnh chiều cao của ảnh */
+            object-fit: cover;
+            /* Đảm bảo ảnh vừa khung */
+    }
+    
+    .card-title {
+            font-size: 1rem;
+            font-weight: bold;
+    }
+    
+    .btn-outline-primary {
+            margin-top: 10px;
+        }
+
+    .pointer{
+        cursor: pointer;
+    }
+        
