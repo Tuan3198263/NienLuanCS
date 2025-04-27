@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Job Search</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* CSS như trước */
+      /********** Template CSS **********/
+      :root {
+        --primary: #009cff;
+        --light: #f3f6f9;
+        --dark: #191c24;
+      }
+
+      .back-to-top {
+        position: fixed;
+        display: none;
+        right: 45px;
+        bottom: 45px;
+        z-index: 99;
+      }
+
+      /*** Spinner ***/
+      #spinner {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+        z-index: 99999;
+      }
+
+      #spinner.show {
+        transition: opacity 0.5s ease-out, visibility 0s linear 0s;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      /*** Button ***/
+      .btn {
+        transition: 0.5s;
+      }
+
+      .btn.btn-primary {
+        color: #ffffff;
+      }
+
+      .btn-square {
+        width: 38px;
+        height: 38px;
+      }
+
+      .btn-sm-square {
+        width: 32px;
+        height: 32px;
+      }
+
+      .btn-lg-square {
+        width: 48px;
+        height: 48px;
+      }
+
+      .btn-square,
+      .btn-sm-square,
+      .btn-lg-square {
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: normal;
+        border-radius: 50px;
+      }
+
+      /*** Layout ***/
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 250px;
+        height: 100vh;
+        overflow-y: auto;
+        background: var(--light);
+        transition: 0.5s;
+        z-index: 999;
+      }
+
+      .content {
+        margin-left: 250px;
+        min-height: 100vh;
+        background: #ffffff;
+        transition: 0.5s;
+      }
+
+      @media (min-width: 992px) {
+        .sidebar {
+          margin-left: 0;
+        }
+
+        .sidebar.open {
+          margin-left: -250px;
+        }
+
+        .content {
+          width: calc(100% - 250px);
+        }
+
+        .content.open {
+          width: 100%;
+          margin-left: 0;
+        }
+      }
+
+      @media (max-width: 991.98px) {
+        .sidebar {
+          margin-left: -250px;
+        }
+
+        .sidebar.open {
+          margin-left: 0;
+        }
+
+        .content {
+          width: 100%;
+          margin-left: 0;
+        }
+      }
+
+      /*** Navbar ***/
+      .sidebar .navbar .navbar-nav .nav-link {
+        padding: 7px 20px;
+        color: var(--dark);
+        font-weight: 500;
+        border-left: 3px solid var(--light);
+        border-radius: 0 30px 30px 0;
+        outline: none;
+      }
+
+      .sidebar .navbar .navbar-nav .nav-link:hover,
+      .sidebar .navbar .navbar-nav .nav-link.active {
+        color: var(--primary);
+        background: #ffffff;
+        border-color: var(--primary);
+      }
+
+      .sidebar .navbar .navbar-nav .nav-link i {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        border-radius: 40px;
+      }
+
+      .sidebar .navbar .navbar-nav .nav-link:hover i,
+      .sidebar .navbar .navbar-nav .nav-link.active i {
+        background: var(--light);
+      }
+
+      .sidebar .navbar .dropdown-toggle::after {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        border: none;
+        content: "\f107";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        transition: 0.5s;
+      }
+
+      .sidebar .navbar .dropdown-toggle[aria-expanded="true"]::after {
+        transform: rotate(-180deg);
+      }
+
+      .sidebar .navbar .dropdown-item {
+        padding-left: 25px;
+        border-radius: 0 30px 30px 0;
+      }
+
+      .content .navbar .navbar-nav .nav-link {
+        margin-left: 25px;
+        padding: 12px 0;
+        color: var(--dark);
+        outline: none;
+      }
+
+      .content .navbar .navbar-nav .nav-link:hover,
+      .content .navbar .navbar-nav .nav-link.active {
+        color: var(--primary);
+      }
+
+      .content .navbar .sidebar-toggler,
+      .content .navbar .navbar-nav .nav-link i {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        border-radius: 40px;
+      }
+
+      .content .navbar .dropdown-toggle::after {
+        margin-left: 6px;
+        vertical-align: middle;
+        border: none;
+        content: "\f107";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        transition: 0.5s;
+      }
+
+      .content .navbar .dropdown-toggle[aria-expanded="true"]::after {
+        transform: rotate(-180deg);
+      }
+
+      @media (max-width: 575.98px) {
+        .content .navbar .navbar-nav .nav-link {
+          margin-left: 15px;
+        }
+      }
+
+      /*** Date Picker ***/
+      .bootstrap-datetimepicker-widget.bottom {
+        top: auto !important;
+      }
+
+      .bootstrap-datetimepicker-widget .table * {
+        border-bottom-width: 0px;
+      }
+
+      .bootstrap-datetimepicker-widget .table th {
+        font-weight: 500;
+      }
+
+      .bootstrap-datetimepicker-widget.dropdown-menu {
+        padding: 10px;
+        border-radius: 2px;
+      }
+
+      .bootstrap-datetimepicker-widget table td.active,
+      .bootstrap-datetimepicker-widget table td.active:hover {
+        background: var(--primary);
+      }
+
+      .bootstrap-datetimepicker-widget table td.today::before {
+        border-bottom-color: var(--primary);
+      }
+
+      /*** Testimonial ***/
+      .progress .progress-bar {
+        width: 0px;
+        transition: 2s;
+      }
+
+      /*** Testimonial ***/
+      .testimonial-carousel .owl-dots {
+        margin-top: 24px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+
+      .testimonial-carousel .owl-dot {
+        position: relative;
+        display: inline-block;
+        margin: 0 5px;
+        width: 15px;
+        height: 15px;
+        border: 5px solid var(--primary);
+        border-radius: 15px;
+        transition: 0.5s;
+      }
+
+      .testimonial-carousel .owl-dot.active {
+        background: var(--dark);
+        border-color: var(--primary);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar Start -->
+    <div class="sidebar pe-4 pb-3">
+      <nav class="navbar bg-light navbar-light">
+        <a href="index.html" class="navbar-brand mx-4 mb-3">
+          <h3 class="text-primary">
+            <i class="fa fa-briefcase me-2"></i>JobAdmin
+          </h3>
+        </a>
+        <div class="d-flex align-items-center ms-4 mb-4">
+          <div class="position-relative">
+            <img
+              class="rounded-circle"
+              src="img/user.jpg"
+              alt=""
+              style="width: 40px; height: 40px"
+            />
+            <div
+              class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"
+            ></div>
+          </div>
+          <div class="ms-3">
+            <h6 class="mb-0">Admin Name</h6>
+            <span>Administrator</span>
+          </div>
+        </div>
+        <div class="navbar-nav w-100">
+          <!-- Dashboard -->
+          <a href="index.html" class="nav-item nav-link active">
+            <i class="fa fa-tachometer-alt me-2"></i>Tổng quan
+          </a>
+          <!-- Quản lý công việc -->
+          <a href="job-management.html" class="nav-item nav-link">
+            <i class="fa fa-briefcase me-2"></i>Công ty
+          </a>
+          <!-- Quản lý người dùng -->
+          <a href="user-management.html" class="nav-item nav-link">
+            <i class="fa fa-users me-2"></i>Tin tuyển dung
+          </a>
+          <!-- Quản lý nhà tuyển dụng -->
+          <a href="employer-management.html" class="nav-item nav-link">
+            <i class="fa fa-building me-2"></i>Hồ sơ
+          </a>
+          <!-- Thống kê -->
+          <a href="statistics.html" class="nav-item nav-link">
+            <i class="fa fa-chart-bar me-2"></i>Thống Kê
+          </a>
+          <!-- Các trang khác -->
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+            >
+              <i class="far fa-file-alt me-2"></i>Các Trang
+            </a>
+            <div class="dropdown-menu bg-transparent border-0">
+              <a href="signin.html" class="dropdown-item">Đăng Nhập</a>
+              <a href="signup.html" class="dropdown-item">Đăng Ký</a>
+              <a href="404.html" class="dropdown-item">Lỗi 404</a>
+              <a href="blank.html" class="dropdown-item">Trang Trắng</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Sidebar End -->
+
+    <!-- Main Content -->
+    <div class="content">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Quản lý công ty</a>
+          <!-- Button to Add Company -->
+          <button
+            class="btn btn-success ml-auto"
+            data-bs-toggle="modal"
+            data-bs-target="#companyModal"
+          >
+            Thêm công ty
+          </button>
+        </div>
+      </nav>
+      <div class="container mt-4">
+        <!-- Company Info -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h4>Thông tin công ty</h4>
+          </div>
+          <div class="card-body">
+            <p><strong>Tên công ty:</strong> XYZ Corporation</p>
+            <p><strong>Địa chỉ:</strong> 123 Street, City, Country</p>
+            <p><strong>Điện thoại:</strong> (123) 456-7890</p>
+            <p><strong>Email:</strong> contact@xyz.com</p>
+          </div>
+        </div>
+
+        <!-- Employees List -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h4>Danh sách công ty</h4>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>STT</th>
+                  <th>Tên</th>
+                  <th>Chức vụ</th>
+                  <th>Phòng ban</th>
+                  <th>Hành động</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>John Doe</td>
+                  <td>Giám đốc</td>
+                  <td>Quản lý</td>
+                  <td>
+                    <button
+                      class="btn btn-primary btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#companyModal"
+                      onclick="editCompany(1)"
+                    >
+                      Sửa
+                    </button>
+                    <button
+                      class="btn btn-danger btn-sm"
+                      onclick="deleteCompany(1)"
+                    >
+                      Xóa
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Jane Smith</td>
+                  <td>Nhân viên</td>
+                  <td>Marketing</td>
+                  <td>
+                    <button
+                      class="btn btn-primary btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#companyModal"
+                      onclick="editCompany(2)"
+                    >
+                      Sửa
+                    </button>
+                    <button
+                      class="btn btn-danger btn-sm"
+                      onclick="deleteCompany(2)"
+                    >
+                      Xóa
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Add/Edit Company -->
+    <div
+      class="modal fade"
+      id="companyModal"
+      tabindex="-1"
+      aria-labelledby="companyModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="companyModalLabel">Thêm/Sửa công ty</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="companyForm">
+              <div class="mb-3">
+                <label for="companyName" class="form-label">Tên công ty</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="companyName"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="companyAddress" class="form-label">Địa chỉ</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="companyAddress"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="companyPhone" class="form-label">Điện thoại</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="companyPhone"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="companyEmail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="companyEmail"
+                  required
+                />
+              </div>
+              <input type="hidden" id="companyId" />
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Đóng
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="saveCompany()"
+            >
+              Lưu
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let companies = [
+        {
+          id: 1,
+          name: "XYZ Corporation",
+          address: "123 Street, City, Country",
+          phone: "(123) 456-7890",
+          email: "contact@xyz.com",
+        },
+        {
+          id: 2,
+          name: "ABC Ltd.",
+          address: "456 Road, City, Country",
+          phone: "(234) 567-8901",
+          email: "contact@abc.com",
+        },
+      ];
+
+      // Function to display companies
+      function displayCompanies() {
+        const tbody = document.querySelector("table tbody");
+        tbody.innerHTML = "";
+        companies.forEach((company, index) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+        <td>${index + 1}</td>
+        <td>${company.name}</td>
+        <td>${company.address}</td>
+        <td>${company.phone}</td>
+        <td>
+          <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#companyModal" onclick="editCompany(${
+            company.id
+          })">Sửa</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteCompany(${
+            company.id
+          })">Xóa</button>
+        </td>
+      `;
+          tbody.appendChild(row);
+        });
+      }
+
+      // Function to edit company
+      function editCompany(id) {
+        const company = companies.find((c) => c.id === id);
+        if (company) {
+          document.getElementById("companyName").value = company.name;
+          document.getElementById("companyAddress").value = company.address;
+          document.getElementById("companyPhone").value = company.phone;
+          document.getElementById("companyEmail").value = company.email;
+          document.getElementById("companyId").value = company.id;
+          document.getElementById("companyModalLabel").innerText =
+            "Sửa công ty";
+        }
+      }
+
+      // Function to save company (add or update)
+      function saveCompany() {
+        const id = document.getElementById("companyId").value;
+        const name = document.getElementById("companyName").value;
+        const address = document.getElementById("companyAddress").value;
+        const phone = document.getElementById("companyPhone").value;
+        const email = document.getElementById("companyEmail").value;
+
+        if (id) {
+          // Update company
+          const company = companies.find((c) => c.id == id);
+          company.name = name;
+          company.address = address;
+          company.phone = phone;
+          company.email = email;
+        } else {
+          // Add new company
+          const newCompany = {
+            id: companies.length + 1,
+            name: name,
+            address: address,
+            phone: phone,
+            email: email,
+          };
+          companies.push(newCompany);
+        }
+
+        $("#companyModal").modal("hide");
+        displayCompanies();
+      }
+
+      // Function to delete company
+      function deleteCompany(id) {
+        const confirmation = confirm("Bạn có chắc chắn muốn xóa công ty này?");
+        if (confirmation) {
+          companies = companies.filter((c) => c.id !== id);
+          displayCompanies();
+        }
+      }
+
+      // Initial display of companies
+      displayCompanies();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

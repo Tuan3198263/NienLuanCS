@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý công ty</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bs5-toast@1.0.2/dist/bs5-toast.min.js"></script>
+    <style>
+      .company-list {
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      .company-item:hover {
+        cursor: pointer;
+      }
+      .icon-btn {
+        cursor: pointer;
+      }
+      .company-detail {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <!-- Phần danh sách công ty (Bên trái) -->
+        <div class="col-md-4 company-list">
+          <div class="card">
+            <div class="card-header">
+              <h4>Danh sách công ty</h4>
+              <button
+                class="btn btn-primary btn-sm"
+                data-bs-toggle="modal"
+                data-bs-target="#addCompanyModal"
+                onclick="openAddCompanyModal()"
+              >
+                Thêm công ty
+              </button>
+            </div>
+            <div class="card-body">
+              <ul class="list-group" id="companyList">
+                <!-- Các công ty sẽ được hiển thị ở đây -->
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phần thông tin chi tiết công ty (Bên phải) -->
+        <div class="col-md-8 company-detail" id="companyDetail">
+          <div class="card">
+            <div class="card-header">
+              <h4>Thông tin chi tiết công ty</h4>
+            </div>
+            <div class="card-body">
+              <h5 id="detailCompanyName"></h5>
+              <p>
+                <strong>Địa chỉ:</strong>
+                <span id="detailCompanyAddress"></span>
+              </p>
+              <p>
+                <strong>Điện thoại:</strong>
+                <span id="detailCompanyPhone"></span>
+              </p>
+              <p>
+                <strong>Email:</strong> <span id="detailCompanyEmail"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Thêm công ty -->
+    <div
+      class="modal fade"
+      id="addCompanyModal"
+      tabindex="-1"
+      aria-labelledby="addCompanyLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addCompanyLabel">Thêm công ty</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="addCompanyForm">
+              <input type="hidden" id="companyId" />
+              <!-- Thêm input ẩn để lưu ID công ty khi sửa -->
+              <div class="mb-3">
+                <label for="companyName" class="form-label">Tên công ty</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="companyName"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="companyAddress" class="form-label">Địa chỉ</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="companyAddress"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="companyPhone" class="form-label">Điện thoại</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="companyPhone"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="companyEmail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="companyEmail"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Lưu</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Sample data (this would be fetched from the server in a real app)
+      let companies = [
+        {
+          id: 1,
+          name: "Công ty A",
+          address: "Địa chỉ A",
+          phone: "0123456789",
+          email: "a@company.com",
+        },
+        {
+          id: 2,
+          name: "Công ty B",
+          address: "Địa chỉ B",
+          phone: "0123456789",
+          email: "b@company.com",
+        },
+        {
+          id: 3,
+          name: "Công ty C",
+          address: "Địa chỉ C",
+          phone: "0123456789",
+          email: "c@company.com",
+        },
+      ];
+
+      // Function to display the list of companies
+      function displayCompanies() {
+        const companyListElement = document.getElementById("companyList");
+        companyListElement.innerHTML = "";
+
+        companies.forEach((company) => {
+          const listItem = document.createElement("li");
+          listItem.classList.add("list-group-item", "company-item");
+          listItem.setAttribute("data-id", company.id);
+          listItem.innerHTML = `
+          <div class="d-flex justify-content-between">
+            <span onclick="showCompanyDetails(${company.id})">${company.name}</span>
+            <div>
+              <i class="bi bi-pencil-square icon-btn" onclick="editCompany(${company.id})"></i>
+              <i class="bi bi-trash icon-btn ms-3" onclick="deleteCompany(${company.id})"></i>
+            </div>
+          </div>
+        `;
+          companyListElement.appendChild(listItem);
+        });
+      }
+
+      // Function to display company details
+      function showCompanyDetails(companyId) {
+        const company = companies.find((c) => c.id === companyId);
+        if (company) {
+          document.getElementById("detailCompanyName").innerText = company.name;
+          document.getElementById("detailCompanyAddress").innerText =
+            company.address;
+          document.getElementById("detailCompanyPhone").innerText =
+            company.phone;
+          document.getElementById("detailCompanyEmail").innerText =
+            company.email;
+          document.getElementById("companyDetail").style.display = "block";
+        }
+      }
+
+      // Function to handle editing a company
+      function editCompany(companyId) {
+        const company = companies.find((c) => c.id === companyId);
+        if (company) {
+          document.getElementById("companyName").value = company.name;
+          document.getElementById("companyAddress").value = company.address;
+          document.getElementById("companyPhone").value = company.phone;
+          document.getElementById("companyEmail").value = company.email;
+          document.getElementById("companyId").value = company.id;
+          document.getElementById("addCompanyLabel").innerText =
+            "Chỉnh sửa công ty";
+          $("#addCompanyModal").modal("show");
+        }
+      }
+
+      // Function to handle deleting a company
+      function deleteCompany(companyId) {
+        if (confirm("Bạn có chắc chắn muốn xóa công ty này?")) {
+          const index = companies.findIndex((c) => c.id === companyId);
+          if (index !== -1) {
+            companies.splice(index, 1);
+            displayCompanies();
+            document.getElementById("companyDetail").style.display = "none";
+          }
+        }
+      }
+
+      // Function to open the modal for adding a new company
+      function openAddCompanyModal() {
+        document.getElementById("addCompanyLabel").innerText = "Thêm công ty";
+        document.getElementById("companyId").value = "";
+        document.getElementById("addCompanyForm").reset();
+      }
+
+      // On submit, add or update the company
+      document
+        .getElementById("addCompanyForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const companyId = document.getElementById("companyId").value;
+          const companyName = document.getElementById("companyName").value;
+          const companyAddress =
+            document.getElementById("companyAddress").value;
+          const companyPhone = document.getElementById("companyPhone").value;
+          const companyEmail = document.getElementById("companyEmail").value;
+
+          if (companyId) {
+            // Edit existing company
+            const company = companies.find((c) => c.id === parseInt(companyId));
+            if (company) {
+              company.name = companyName;
+              company.address = companyAddress;
+              company.phone = companyPhone;
+              company.email = companyEmail;
+            }
+          } else {
+            // Add new company
+            const newCompany = {
+              id: companies.length + 1,
+              name: companyName,
+              address: companyAddress,
+              phone: companyPhone,
+              email: companyEmail,
+            };
+            companies.push(newCompany);
+          }
+
+          $("#addCompanyModal").modal("hide");
+          displayCompanies();
+          document.getElementById("companyDetail").style.display = "none";
+        });
+
+      // Initial display of companies
+      displayCompanies();
+    </script>
+  </body>
+</html>
