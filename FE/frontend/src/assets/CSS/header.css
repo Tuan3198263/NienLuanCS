@@ -1,0 +1,42 @@
+.navbar-custom {
+    padding: 0.5rem 1rem; /* Điều chỉnh kích thước padding cho navbar */
+}
+
+.navbar {
+    flex-wrap: wrap; /* Cho phép các phần tử trong navbar bọc khi không đủ không gian */
+}
+
+.search-bar {
+    max-width: 400px; /* Giới hạn chiều rộng tối đa của thanh tìm kiếm */
+    flex: 1; /* Đảm bảo rằng thanh tìm kiếm chiếm không gian còn lại */
+    margin-right: 10px; /* Khoảng cách giữa thanh tìm kiếm và các nút bên cạnh */
+}
+
+.input-group .form-control {
+    border-top-right-radius: 0; /* Bỏ bo góc bên phải cho input */
+    border-bottom-right-radius: 0; /* Bỏ bo góc bên phải cho input */
+}
+
+.input-group .btn {
+    border-top-left-radius: 0; /* Bỏ bo góc bên trái cho button */
+    border-bottom-left-radius: 0; /* Bỏ bo góc bên trái cho button */
+}
+
+@media (max-width: 820px) {
+    .navbar-collapse {
+        flex-direction: column; /* Đặt chiều dọc cho menu khi thu nhỏ */
+        align-items: stretch; /* Căn giữa và kéo dài các nút */
+    }
+
+    .d-flex {
+        flex-direction: column; /* Xếp chồng các button theo chiều dọc */
+        width: 100%; /* Đảm bảo rằng các button chiếm toàn bộ chiều rộng */
+    }
+
+    .btn {
+        min-height: 40px; /* Chiều cao tối thiểu cho các nút */
+        width: 100%; /* Chiều rộng tự động cho các button */
+        margin: 5px 0; /* Khoảng cách giữa các button */
+        white-space: normal; /* Cho phép văn bản xuống dòng */
+    }
+}

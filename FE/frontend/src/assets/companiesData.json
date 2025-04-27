@@ -1,0 +1,210 @@
+[
+  {
+    "id": 1,
+    "name": "Công ty TNHH Công Nghệ Chính Xác FUYU",
+    "image": "../assets/img/company_logo/fox_corn.webp",
+    "jobsOpening": 5,
+    "followersCount": 120,
+    "description": "Cùng với tám chữ “Hồng phi thiên lý, Hải nạp bách xuyên (đôi cánh đầy sức mạnh bay nghìn dặm, nối liền các biển và châu lục)” và dưới ngọn cờ của Tập đoàn Hồng Hải, Công ty TNHH chính xác FUYU chiêu nạp anh tài các nơi, cùng bạn tạo dựng sự nghiệp!",
+    "jobs": [
+      {
+        "jobTitle": "Foxconn Tuyển Gấp Nhân Viên Chuyên Ngành Tiếng Trung, Tiếng Anh",
+        "companyName": "Công Ty TNHH Công Nghệ Chính Xác Fuyu",
+        "salary": "$500-1000 /month",
+        "location": "Bắc Giang",
+        "updatedDate": "05/10/2024",
+        "tags": ["English", "Comunication", "Chinese", "+1"],
+         "companyLogo": "../assets/img/4congty/company1.png"
+      },
+      {
+        "jobTitle": "Foxconn Bắc Giang Tuyển Gấp Kỹ Sư Sửa Chữa Bản Mạch Điện Tử Re Repair Engineer",
+        "companyName": "Công Ty TNHH Công Nghệ Chính Xác Fuyu",
+        "salary": "$450-700 /month",
+        "location": "Hà Nội",
+        "updatedDate": "04/10/2024",
+        "tags": ["Repair board", "PCBA", "Sữa chữa bảng mạch"],
+        "companyLogo": "../assets/img/4congty/company1.png"
+      },
+      {
+        "jobTitle": "Foxconn Bắc Giang Tuyển Gấp Kỹ Sư Thiết Kế Cơ Khí",
+        "companyName": "Công Ty TNHH Công Nghệ Chính Xác Fuyu",
+        "salary": "$450-1000 /month",
+        "location": "Hà Nội, Bắc Ninh",
+        "updatedDate": "09/11/2024",
+        "tags": ["Solidworks Drawing", "AutoCAD", "AutoCAD 2D","+2"],
+        "companyLogo": "../assets/img/4congty/company1.png"
+      },
+       {
+        "jobTitle": "Foxconn Bắc Giang Tuyển Gấp Kỹ Sư TE (Test Engineer)",
+        "companyName": "Công Ty TNHH Công Nghệ Chính Xác Fuyu",
+        "salary": "$450-1200 /month",
+        "location": "Hà Nội, Bắc Ninh, Bắc Giang",
+        "updatedDate": "02/10/2024",
+        "tags": ["Project Manager", "NPI", "Customer Handling","+2"],
+        "companyLogo": "../assets/img/4congty/company1.png"
+      },
+            {
+        "jobTitle": "Foxconn Tuyển Gấp Kỹ Sư Phát Triển Phần Mềm Hệ Thống",
+        "companyName": "Công Ty TNHH Công Nghệ Chính Xác Fuyu",
+        "salary": "$450-100 /month",
+        "location": "Hà Nội",
+        "updatedDate": "12/9/2024",
+        "tags": ["Lập trình Backend", "API", "System Development","+2"],
+        "companyLogo": "../assets/img/4congty/company1.png"
+      }
+    ],
+     "img_office": ["../assets/img/company_office/office1.jpg",
+     "../assets/img/company_office/office2.jpg", "../assets/img/company_office/office3.jpg","../assets/img/company_office/office4.jpg",
+    "../assets/img/company_office/office5.jpg","../assets/img/company_office/office6.jpg"]
+  },
+  {
+    "id": 2,
+    "name": "Công Ty TNHH Giáo Dục Và Đào Tạo Vinacademy",
+    "image": "../assets/img/company_logo/vinuni.webp",
+    "jobsOpening": 4,
+    "followersCount": 80,
+     "description": "VinUni has strategic collaborations with the world’s leading universities, including Cornell University and the University of Pennsylvania. These universities have become close advisors and crucial enablers in establishing the three colleges at VinUni: College of Business and Management, College of Engineering and Computer Science, and College of Health Sciences. Every aspect of the University: its curricula, research, faculty, student body, facilities, and campus life, is being developed to meet the highest standards set by the world’s leading accrediting and ranking organizations, such as ABET, AACSB, Quacquarelli Symonds (QS) and Times Higher Education (THE).",
+    "jobs": [
+      {
+        "jobTitle": "Accountant",
+        "companyName": "Công Ty TNHH Giáo Dục Và Đào Tạo Vinacademy",
+        "salary": "$400-800 /month",
+        "location": "Hà Nội",
+        "updatedDate": "01/10/2024",
+        "tags": ["Excel Skills", "Finace","+2"],
+        "companyLogo": "../assets/img/4congty/company2.png"
+      },
+      {
+        "jobTitle": "Students Financial Support Officer",
+        "companyName": "Vinacademy Education And Training Limited Liability Company",
+        "salary": "$300-600 /month",
+        "location": "Hà Nội",
+        "updatedDate": "02/10/2024",
+        "tags": ["English", "France"],
+        "companyLogo": "../assets/img/4congty/company2.png"
+      },
+      {
+        "jobTitle": "Accreditation Officer",
+        "companyName": "Công Ty TNHH Giáo Dục Và Đào Tạo Vinacademy",
+        "salary": "$200-400 /month",
+        "location": "Hà Nội",
+        "updatedDate": "04/8/2024",
+        "tags": ["Project Manager", "Critical Thinking", "+1"],
+        "companyLogo": "../assets/img/4congty/company2.png"
+      },
+      {
+        "jobTitle": "Student Affairs Officer (in charge of Health & Well-Being)",
+        "companyName": "Công Ty TNHH Giáo Dục Và Đào Tạo Vinacademy",
+        "salary": "$300-600 /month",
+        "location": "Hà Nội",
+        "updatedDate": "02/10/2024",
+        "tags": ["Organizing and planning", "Health and wellbeing"],
+        "companyLogo": "../assets/img/4congty/company2.png"
+      }
+    ],
+      "img_office": ["../assets/img/company_office/office1.jpg",
+     "../assets/img/company_office/office2.jpg", "../assets/img/company_office/office3.jpg","../assets/img/company_office/office4.jpg",
+    "../assets/img/company_office/office5.jpg","../assets/img/company_office/office6.jpg"]
+   
+  },
+    {
+    "id": 3,
+    "name": "Công Ty TNHH MTV Vinschool",
+    "image": "../assets/img/company_logo/vinschool.webp",
+    "jobsOpening": 4,
+    "followersCount": 745,
+    "description": "Với tầm nhìn, chiến lược phát triển dài hạn và sự đầu tư từ Tập đoàn Vingroup, sau 8 năm hoạt động, Vinschool đã trở thành một trong những Hệ thống Giáo dục phổ thông lớn nhất Việt Nam, nơi hội tụ gần 5000 cán bộ nhân viên, giáo viên. Vinschool luôn chào đón các nhân tài có chuyên môn giỏi, khao khát sự đổi mới và mong muốn được làm việc trong một môi trường năng động, sáng tạo, đẳng cấp cùng chế độ phúc lợi hấp dẫn.",
+    "jobs": [
+      {
+        "jobTitle": "Trưởng Bộ Phận Hành Chính Trường Học",
+        "companyName": "Công Ty Cổ Phần Vinschool",
+        "salary": "Negotiable",
+        "location": "Hồ Chí Minh",
+        "updatedDate": "25/9/2024",
+        "tags": ["Hành chính", "Vận Hành", "+1"],
+         "companyLogo": "../assets/img/4congty/company3.webp"
+      },
+      {
+        "jobTitle": "Chuyên Viên Cố Vấn Học Tập (Tư Vấn Du Học)",
+        "companyName": "Công Ty Cổ Phần Vinschool",
+        "salary": "$700-1000 /month",
+        "location": "Hà Nội, Hải Phòng",
+        "updatedDate": "04/10/2024",
+        "tags": ["Tư vấn du học", "Hướng nghiệp", "+2"],
+        "companyLogo": "../assets/img/4congty/company3.webp"
+      },
+      {
+        "jobTitle": "Lập Trình Viên .NETv",
+        "companyName": "Công Ty Cổ Phần Vinschool",
+        "salary": "$700-1000 /month",
+        "location": "Hà Nội",
+        "updatedDate": "04/10/2024",
+        "tags": ["Tư vấn giáo dục", "Trợ lí", "+2"],
+        "companyLogo": "../assets/img/4congty/company3.webp"
+      },
+      {
+        "jobTitle": "Khối Trưởng Tiếng Anh Bậc Mầm Non",
+        "companyName": "Công Ty Cổ Phần Vinschool",
+        "salary": "Negotiable",
+        "location": "Hồ Chí Minh",
+        "updatedDate": "29/9/2024",
+        "tags": ["Tiếng Anh", "Giảng dạy tiếng Anh", "Quản lí"],
+        "companyLogo": "../assets/img/4congty/company3.webp"
+      }
+    ],
+     "img_office": ["../assets/img/company_office/office1.jpg",
+     "../assets/img/company_office/office2.jpg", "../assets/img/company_office/office3.jpg","../assets/img/company_office/office4.jpg",
+    "../assets/img/company_office/office5.jpg","../assets/img/company_office/office6.jpg"]
+  },
+
+      {
+    "id": 4,
+    "name": "Chailease International Leasing Co., Ltd.(Head Office)",
+    "image": "../assets/img/company_logo/chailease.webp",
+    "jobsOpening": 4,
+    "followersCount": 340,
+    "description": "Công ty Cho Thuê Tài Chính TNHH Một Thành Viên Quốc Tế Chailease (''CILC'') là tổ chức tín dụng 100% vốn nước ngoài thuộc Chailease Finance Group – là tập đoàn cho thuê tài chính hàng đầu ở Đài Loan với hơn 45 năm kinh nghiệm và có hoạt động kinh doanh tại các quốc gia thuộc lãnh thổ Trung Quốc, Đài Loan, Châu Á Thái Bình Dương và Hoa Kỳ.CILC được Ngân Hàng Nhà Nước Việt Nam cấp giấy phép thành lập vào năm 2006 và bắt đầu đi vào họat động tại Việt Nam năm 2007. CILC thực hiện dịch vụ cho thuê tài chính tài sản trong nước, mua và cho thuê lại, cho thuê tài chính tài sản nhập khẩu với những máy móc thiết bị và phương tiện vận chuyển …cho những doanh nghiệp tại Việt Nam.",
+    "jobs": [
+      {
+        "jobTitle": "Nhân Viên Hỗ Trợ Kinh Doanh Phòng Bảo Hiểm (Insurance Admin)",
+        "companyName": "Chailease International Leasing Co., Ltd. (Head Office)",
+        "salary": "Negotiable",
+        "location": "Hồ Chí Minh",
+        "updatedDate": "05/10/2024",
+        "tags": ["Tiếng Anh", "Hỗ trợ kinh doanh", "Nghiên cứu sản phẩm"],
+         "companyLogo": "../assets/img/4congty/company4.webp"
+      },
+      {
+        "jobTitle": "Quản Lý Chất Lượng",
+        "companyName": "Chailease International Leasing Co., Ltd. (Head Office)",
+        "salary": "Negotiable",
+        "location": "Hồ Chí Minh, Bình Dương",
+        "updatedDate": "04/10/2024",
+        "tags": ["Quan hệ khách hàng", "Tín dụng doanh nghiệp", "+2"],
+        "companyLogo": "../assets/img/4congty/company4.webp"
+      },
+        {
+        "jobTitle": "Quản Lý Chất Lượng",
+        "companyName": "Chailease International Leasing Co., Ltd. (Head Office)",
+        "salary": "Negotiable",
+        "location": "Hà Nội",
+        "updatedDate": "04/10/2024",
+        "tags": ["Thu hồi nợ công", "Thanh toán công nợ", "+1"],
+        "companyLogo": "../assets/img/4congty/company4.webp"
+      },
+        {
+        "jobTitle": "Quản Lý Chất Lượng",
+        "companyName": "Chailease International Leasing Co., Ltd. (Head Office)",
+        "salary": "Negotiable",
+        "location": "Bình Dương",
+        "updatedDate": "04/10/2024",
+        "tags": ["Tài chính ngân hàng", "Tín dụng doanh nghiệp", "+1"],
+        "companyLogo": "../assets/img/4congty/company4.webp"
+      }
+      
+    ],
+     "img_office": ["../assets/img/company_office/office1.jpg",
+     "../assets/img/company_office/office2.jpg", "../assets/img/company_office/office3.jpg","../assets/img/company_office/office4.jpg",
+    "../assets/img/company_office/office5.jpg","../assets/img/company_office/office6.jpg"]
+  }
+]

@@ -1,0 +1,56 @@
+/* Đặt chiều cao và căn chỉnh hình ảnh */
+.job-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Làm tròn hình ảnh */
+}
+
+/* Căn chỉnh tiêu đề và nút */
+.job-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.job-company {
+    margin-bottom: 10px;
+}
+
+.btn-outline-primary {
+    padding: 5px 10px;
+}
+
+/* Background cho tiêu đề */
+.bg-primary {
+    background-color: #007bff !important;
+}
+
+/* Đảm bảo các nút chuyển hướng nằm sát hai bên */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    /* Điều chỉnh kích thước nút nếu cần */
+    height: 100%;
+    /* Đảm bảo nút có chiều cao đầy đủ của carousel */
+   
+    /* Thay đổi màu nền của nút nếu cần */
+}
+
+/* Đảm bảo các nút không bị che khuất */
+
+
+/* Đặt các nút nằm sát hai bên */
+.carousel-control-prev {
+    left: 0;
+}
+
+.carousel-control-next {
+    right: 0;
+}
+
+.job-item{
+    border-radius: 10px;
+}
+
+
